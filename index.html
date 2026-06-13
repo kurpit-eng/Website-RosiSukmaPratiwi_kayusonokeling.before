@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Informasi Sonokeling - ROSI SUKMA PRATIWI</title>
+    <style>
+        :root {
+            --primary-color: #0f301d;
+            --secondary-color: #4a2c11;
+            --bg-body: #f8fafc;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', sans-serif; background-color: var(--bg-body); color: #334155; line-height: 1.7; }
+
+        /* Navbar */
+        .navbar { background-color: var(--primary-color); color: white; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; }
+
+        /* Hero Polos */
+        .hero-section { 
+            background-color: var(--primary-color); 
+            color: white; 
+            padding: 80px 20px; 
+            text-align: center; 
+        }
+
+        .hero-section h1 { font-size: 2.2rem; margin-bottom: 10px; }
+
+        /* Tab */
+        .menu-container { background: white; border-bottom: 1px solid #e2e8f0; display: flex; justify-content: center; }
+        .tab-btn { padding: 20px 40px; border: none; background: none; font-weight: 700; color: #64748b; cursor: pointer; border-bottom: 4px solid transparent; }
+        .tab-btn.active { color: var(--primary-color); border-bottom-color: var(--primary-color); }
+
+        .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+        .content-panel { display: none; }
+        .content-panel.active { display: block; }
+        .card { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div><strong>SONOKELING CERTIFICATION SYSTEM</strong></div>
+        <div style="font-size: 0.8rem; text-align: right;">ROSI SUKMA PRATIWI<br>NIM: 2410611220091</div>
+    </nav>
+
+    <header class="hero-section">
+        <h1>Sistem Manajemen Kelola & Sertifikasi Kayu Sonokeling</h1>
+        <p>Aplikasi Dokumentasi Komparatif Kriteria Kelestarian Hasil Hutan</p>
+    </header>
+
+    <div class="menu-container">
+        <button class="tab-btn active" onclick="openTab(event, 'profil')">Eksistensi & Silvikutur</button>
+        <button class="tab-btn" onclick="openTab(event, 'phpl')">ID Standar PHPL / SVLK</button>
+    </div>
+
+    <div class="container">
+        <div id="profil" class="content-panel active">
+            <div class="card">
+                <h2>Eksistensi & Silvikutur</h2>
+                <p>Sonokeling (<em>Dalbergia latifolia</em>) merupakan pohon kayu mewah yang memerlukan rotasi panjang 40-50 tahun. Sebagai spesies CITES Appendix II, konservasi berbasis silvikultur sangat krusial untuk menjaga kelestarian tegakan di masa depan.</p>
+            </div>
+        </div>
+
+        <div id="phpl" class="content-panel">
+            <div class="card">
+                <h2>Standar PHPL / SVLK</h2>
+                <p>Sistem Verifikasi Legalitas Kelestarian (SVLK) bersifat mandatoris di Indonesia. Fokus utamanya adalah legalitas asal-usul kayu dari hutan yang sah serta kepatuhan terhadap dokumen V-Legal untuk akses pasar ekspor.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            document.querySelectorAll('.content-panel').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(tabName).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
